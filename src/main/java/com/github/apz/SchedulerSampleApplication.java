@@ -10,7 +10,7 @@ import net.javacrumbs.shedlock.spring.annotation.EnableSchedulerLock;
 @EnableScheduling
 // EnableSchedulerLockの属性値に指定する時間フォーマットはjava.time.Durationを利用。
 // https://en.wikipedia.org/wiki/ISO_8601#Durations
-// LeastFor は ロック時間の最短。MostForはロック時間の最長。
+// MostForはロック時間の最長。LeastFor は ロック時間の最短。
 @EnableSchedulerLock(defaultLockAtMostFor = "PT5M", defaultLockAtLeastFor = "PT30S")
 public class SchedulerSampleApplication {
 
