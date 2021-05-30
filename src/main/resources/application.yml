@@ -1,0 +1,10 @@
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations:
+  - mapper/**
+  
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: secret

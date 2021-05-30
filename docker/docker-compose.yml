@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_docker
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: test
+      TZ: 'Asia/Tokyo'
+    command: 
+      - --character-set-server=utf8mb4 
+      - --collation-server=utf8mb4_unicode_ci
+      - --sql-mode=NO_ENGINE_SUBSTITUTION
+      - --skip-ssl
+    volumes:
+    - ./docker/mysql57/data:/var/lib/mysql
+    - ./docker/mysql57/conf:/etc/mysql/conf.d/my.cnf
+    - ./docker/mysql57/sql:/docker-entrypoint-initdb.d
+    ports:
+    - 3306:3306
